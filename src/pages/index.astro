@@ -19,7 +19,7 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
     <div class="md:col-span-2 grid md:content-center px-4 gap-y-3">
       <h1 class="text-5xl font-bold">Københavnerbilleder</h1>
       <h2 class="text-4xl font-normal">- en guide til hipster foto af Sten Simons</h2>
-      <Button>Køb nu</Button>
+      <Button variant="primary" size="large">Køb nu</Button>
     </div>
   </section>
 
@@ -174,10 +174,10 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
     </article>
   </section>
 
-  <section id="galleri" class="mx-auto mt-32 galleri">
+  <section id="galleri" class="mx-auto mt-32">
     <h2 class="text-4xl font-normal mb-8">Galleri</h2>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 galleri">
       {
         images.map(({ src }) => (
           <div class="">
@@ -231,7 +231,10 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
       <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" />
       <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
 
-      <Button variant="secondary" size="medium" type="submit">Til betaling</Button>
+      <div class="grid grid-cols-2 gap-2">
+        <Button variant="primary" size="large" type="submit">Til betaling</Button>
+        <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
+      </div>
     </form>
   </section>
 </MainLayout>

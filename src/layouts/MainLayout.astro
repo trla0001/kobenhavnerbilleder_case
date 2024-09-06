@@ -14,7 +14,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
   </head>
-  <body class="max-w-7xl mx-auto font-sans">
+  <body class="max-w-7xl mx-auto font-sans bg">
     <header>
       <Header />
     </header>
@@ -28,3 +28,10 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
+
+<style>
+  .bg {
+    /* background: linear-gradient(90deg, #fff -1.36%, #ececec 99.72%); */
+    background: linear-gradient(90deg, #fff -1.36%, #fafafa 49.18%, #efefef 99.72%);
+  }
+</style>
