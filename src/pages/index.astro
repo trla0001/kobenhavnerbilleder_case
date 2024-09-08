@@ -240,8 +240,9 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
         <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
       </div>
 
-      <div class="grid grid-cols-2 gap-2">
+      <div class="flex flex-row gap-4">
         <Button variant="primary" size="large" type="submit">Til betaling</Button>
+        <Button variant="secondary" size="large" type="submit">Download prøvekapitel</Button>
       </div>
     </form>
 
