@@ -20,7 +20,7 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
     <div class="md:col-span-2 grid md:content-center md:px-4 gap-4">
       <h1 class="text-4xl lg:text-5xl font-bold pt-4">Københavnerbilleder</h1>
       <h2 class="text-3xl lg:text-4xl font-normal">- en guide til hipster foto af Sten Simons</h2>
-      <Button variant="primary" size="large">Køb nu</Button>
+      <div class="grid justify-center"><Button variant="primary" size="large">Køb nu</Button></div>
     </div>
   </section>
 
@@ -48,7 +48,7 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
     <div><Image src={bog_3} format="webp" alt="foto" class="" /></div>
   </section>
 
-  <section id="bog_kap" class="mx-auto mt-20 md:mt-32 bog_kap">
+  <section id="bog_kap" class="md:max-w-4xl mx-auto mt-20 md:mt-32 bog_kap">
     <h2 class="text-3xl lg:text-4xl text-center font-normal mb-12">Bogens kapitler</h2>
 
     <article class="grid md:grid-cols-2 mx-auto gap-8">
@@ -94,10 +94,10 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
     </article>
   </section>
 
-  <section id="anmeldelser" class="mx-auto mt-20 md:mt-32 anmeldelser">
+  <section id="anmeldelser" class="mt-20 md:mt-32 anmeldelser">
     <h2 class="text-3xl lg:text-4xl text-center font-normal mb-8">Anmeldelser af bogen</h2>
 
-    <div class="grid md:grid-cols-3 mx-auto gap-6">
+    <div class="grid md:grid-cols-3 gap-6">
       <Anmeldelser stjerner="5" forfatter="- Hanne Hovgaard, Berlingeren" anmeldelsesid="a1">Københavnerbilleder er en grundig introduktion til at skyde billeder med retro-kant. Hvad enten du er har arbejdet med foto siden 135-filmen kom på markedet, du kun har skudt digitalt eller er helt nybegynder, er der masser af tips og tricks i bogen. </Anmeldelser>
       <Anmeldelser stjerner="4" forfatter="- Kim Kloggaard, Fotojournalen.dk" anmeldelsesid="a2">Teksten er underholdende, og billederne er sku’ flotte. Hvad mere skal man sige om en fotobog? </Anmeldelser>
       <Anmeldelser stjerner="6" forfatter="- Volmer Hansen, Lukkertiden.dk" anmeldelsesid="a3">Sten Simons kan det der - og han bliver bedre og bedre. Stens tredje fotobog er klart den bedste - her er han for alvor i sit rette element, meget bedre end “studiefotografering som begyndere.” Tillykke - godt arbejde. </Anmeldelser>
@@ -240,84 +240,49 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
         <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
       </div>
 
-      <div class="flex flex-row gap-4 items-center">
+      <div class="flex flex-row gap-4 items-center justify-center">
         <Button variant="primary" size="large" type="submit">Til betaling</Button>
         <Button variant="secondary" size="medium" type="submit">Download prøvekapitel</Button>
       </div>
     </form>
+  </section>
 
-    <!-- <form method="post" class="text-neutral-950">
-      <label for="antal" class="block">Antal:</label>
-      <input type="number" id="antal" value="1" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+  <script>
+    import { inView } from "motion";
 
-      <label for="levering">Levering:</label>
-      <input type="radio" id="radio" class="" />
-      <label for="postnord">Post Nord</label>
-      <input type="radio" id="radio" class="" />
-      <label for="afhent">Afent selv</label>
+    const inviewelementet = document.querySelector(".bog_img");
+    inView(inviewelementet, () => {
+      inviewelementet.classList.add("fade-in-bottom");
+    });
 
-      <label for="name">Navn:</label>
-      <input type="text" id="name" placeholder="Anders And" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+    const inviewelementet2 = document.querySelector(".om_bog");
+    inView(inviewelementet2, () => {
+      inviewelementet2.classList.add("fade-in-bottom");
+    });
 
-      <label for="adresse">Adresse:</label>
-      <input type="text" id="adresse" placeholder="Paradisæblevej 8" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+    const inviewelementet3 = document.querySelector(".bog_kap");
+    inView(inviewelementet3, () => {
+      inviewelementet3.classList.add("fade-in-bottom");
+    });
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="anders@andeby.dk" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+    const inviewelementet4 = document.querySelector(".anmeldelser");
+    inView(inviewelementet4, () => {
+      inviewelementet4.classList.add("fade-in-bottom");
+    });
 
-      <label for="postby">Postnummer og By:</label><br />
-      <input type="text" id="postnr" placeholder="0900" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" />
-      <input type="text" id="by" placeholder="Andeby C" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+    const inviewelementet5 = document.querySelector(".galleri");
+    inView(inviewelementet5, () => {
+      inviewelementet5.classList.add("fade-in-bottom");
+    });
 
-      <label for="tlf">Telefon:</label>
-      <input type="tel" id="tlf" placeholder="555-555" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+    const inviewelementet6 = document.querySelector(".om_forfatter");
+    inView(inviewelementet6, () => {
+      inviewelementet6.classList.add("fade-in-bottom");
+    });
 
-      <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="" />
-      <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
-
-      <div class="grid grid-cols-2 gap-2">
-        <Button variant="primary" size="large" type="submit">Til betaling</Button>
-        <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
-      </div>
-    </form> -->
-
-    <script>
-      import { inView } from "motion";
-
-      const inviewelementet = document.querySelector(".bog_img");
-      inView(inviewelementet, () => {
-        inviewelementet.classList.add("fade-in-bottom");
-      });
-
-      const inviewelementet2 = document.querySelector(".om_bog");
-      inView(inviewelementet2, () => {
-        inviewelementet2.classList.add("fade-in-bottom");
-      });
-
-      const inviewelementet3 = document.querySelector(".bog_kap");
-      inView(inviewelementet3, () => {
-        inviewelementet3.classList.add("fade-in-bottom");
-      });
-
-      const inviewelementet4 = document.querySelector(".anmeldelser");
-      inView(inviewelementet4, () => {
-        inviewelementet4.classList.add("fade-in-bottom");
-      });
-
-      const inviewelementet5 = document.querySelector(".galleri");
-      inView(inviewelementet5, () => {
-        inviewelementet5.classList.add("fade-in-bottom");
-      });
-
-      const inviewelementet6 = document.querySelector(".om_forfatter");
-      inView(inviewelementet6, () => {
-        inviewelementet6.classList.add("fade-in-bottom");
-      });
-
-      const inviewelementet7 = document.querySelector(".formular");
-      inView(inviewelementet7, () => {
-        inviewelementet7.classList.add("fade-in-bottom");
-      });
-    </script>
-  </section></MainLayout
->
+    const inviewelementet7 = document.querySelector(".formular");
+    inView(inviewelementet7, () => {
+      inviewelementet7.classList.add("fade-in-bottom");
+    });
+  </script>
+</MainLayout>
