@@ -1,11 +1,10 @@
 ---
 // Henter parametrene fra Astro.props
-const { titel = "", stjerner = "", forfatter = "", anmeldelseid = "" } = Astro.props;
+const { stjerner = "", forfatter = "", anmeldelseid = "" } = Astro.props;
 ---
 
 <article class="prose mb-6">
-  <p class="font-bold">{titel}</p>
-  <p class="antalstjerner" id={anmeldelseid}></p>
+  <p class="stjerner" id={anmeldelseid}></p>
   <p><slot /></p>
   <p class="italic">{forfatter}</p>
 </article>
