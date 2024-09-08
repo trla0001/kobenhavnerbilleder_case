@@ -209,38 +209,39 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
 
   <section id="formular" class="max-w-xl mx-auto mt-32 formular">
     <h2 class="text-3xl lg:text-4xl font-normal mb-8">Køb Københavnerbilleder nu!</h2>
-    <form method="post" class="text-neutral-950">
-      <div class="mb-12">
-        <label for="antal" class="block">Antal:</label>
+    <form method="post" class="grid grid-cols-1 gap-4 text-neutral-950">
+      <div class="flex flex-row items-center pb-8">
+        <label for=" antal" class="block pr-4">Antal:</label>
         <input type="number" id="antal" value="1" class="mt-0 block px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
       </div>
 
-      <div class="mb-12">
-        <label for="levering">Levering:</label>
+      <div class="pb-8">
+        <label for=" levering" class="pr-4">Levering:</label>
         <input type="radio" id="radio" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950" />
-        <label for="postnord">Post Nord</label>
+        <label for="postnord" class="pr-4">Post Nord</label>
         <input type="radio" id="radio" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950" />
-        <label for="afhent">Afent selv</label><br />
+        <label for="afhent">Afhent selv</label><br />
       </div>
 
       <input type="text" id="name" placeholder="Navn" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
-      <input type=" text" id="adresse" placeholder="Adresse" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
+      <input type="text" id="adresse" placeholder="Adresse" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
 
       <input type="email" id="email" placeholder="Email" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
 
-      <div class="grid grid-cols-6 gap-8 mb-12">
+      <div class="grid grid-cols-6 gap-8">
         <input type="text" id="postnr" placeholder="Postnummer" class="col-span-2 mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" />
         <input type="text" id="by" placeholder="By" class="col-span-4 mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
       </div>
 
       <input type="tel" id="tlf" placeholder="Telefon" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
 
-      <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950 mb-12" />
-      <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
+      <div class="pb-8">
+        <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950" />
+        <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
+      </div>
 
-      <div class="grid grid-cols-2 gap-2 mb-12">
+      <div class="grid grid-cols-2 gap-2">
         <Button variant="primary" size="large" type="submit">Til betaling</Button>
-        <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
       </div>
     </form>
 
@@ -278,44 +279,44 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
         <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
       </div>
     </form> -->
-  </section>
 
-  <script>
-    import { inView } from "motion";
+    <script>
+      import { inView } from "motion";
 
-    const inviewelementet = document.querySelector(".bog_img");
-    inView(inviewelementet, () => {
-      inviewelementet.classList.add("fade-in-bottom");
-    });
+      const inviewelementet = document.querySelector(".bog_img");
+      inView(inviewelementet, () => {
+        inviewelementet.classList.add("fade-in-bottom");
+      });
 
-    const inviewelementet2 = document.querySelector(".om_bog");
-    inView(inviewelementet2, () => {
-      inviewelementet2.classList.add("fade-in-bottom");
-    });
+      const inviewelementet2 = document.querySelector(".om_bog");
+      inView(inviewelementet2, () => {
+        inviewelementet2.classList.add("fade-in-bottom");
+      });
 
-    const inviewelementet3 = document.querySelector(".bog_kap");
-    inView(inviewelementet3, () => {
-      inviewelementet3.classList.add("fade-in-bottom");
-    });
+      const inviewelementet3 = document.querySelector(".bog_kap");
+      inView(inviewelementet3, () => {
+        inviewelementet3.classList.add("fade-in-bottom");
+      });
 
-    const inviewelementet4 = document.querySelector(".anmeldelser");
-    inView(inviewelementet4, () => {
-      inviewelementet4.classList.add("fade-in-bottom");
-    });
+      const inviewelementet4 = document.querySelector(".anmeldelser");
+      inView(inviewelementet4, () => {
+        inviewelementet4.classList.add("fade-in-bottom");
+      });
 
-    const inviewelementet5 = document.querySelector(".galleri");
-    inView(inviewelementet5, () => {
-      inviewelementet5.classList.add("fade-in-bottom");
-    });
+      const inviewelementet5 = document.querySelector(".galleri");
+      inView(inviewelementet5, () => {
+        inviewelementet5.classList.add("fade-in-bottom");
+      });
 
-    const inviewelementet6 = document.querySelector(".om_forfatter");
-    inView(inviewelementet6, () => {
-      inviewelementet6.classList.add("fade-in-bottom");
-    });
+      const inviewelementet6 = document.querySelector(".om_forfatter");
+      inView(inviewelementet6, () => {
+        inviewelementet6.classList.add("fade-in-bottom");
+      });
 
-    const inviewelementet7 = document.querySelector(".formular");
-    inView(inviewelementet7, () => {
-      inviewelementet7.classList.add("fade-in-bottom");
-    });
-  </script>
-</MainLayout>
+      const inviewelementet7 = document.querySelector(".formular");
+      inView(inviewelementet7, () => {
+        inviewelementet7.classList.add("fade-in-bottom");
+      });
+    </script>
+  </section></MainLayout
+>
