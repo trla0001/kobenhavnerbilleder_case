@@ -102,8 +102,9 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
       <Anmeldelser stjerner="4" forfatter="- Kim Kloggaard, Fotojournalen.dk" anmeldelsesid="a2">Teksten er underholdende, og billederne er sku’ flotte. Hvad mere skal man sige om en fotobog? </Anmeldelser>
       <Anmeldelser stjerner="6" forfatter="- Volmer Hansen, Lukkertiden.dk" anmeldelsesid="a3">Sten Simons kan det der - og han bliver bedre og bedre. Stens tredje fotobog er klart den bedste - her er han for alvor i sit rette element, meget bedre end “studiefotografering som begyndere.” Tillykke - godt arbejde. </Anmeldelser>
     </div>
+  </section>
 
-    <!-- <article class="grid lg:grid-cols-3 mx-auto gap-8">
+  <!-- <article class="grid lg:grid-cols-3 mx-auto gap-8">
       <div class="grid justify-center">
         <div class="flex flex-row pb-3">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -180,69 +181,104 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
       </div>
     </Anmeldelser> -->
 
-    <section id="galleri" class="mx-auto mt-32">
-      <h2 class="text-3xl lg:text-4xl font-normal mb-8">Galleri</h2>
+  <section id="galleri" class="mx-auto mt-32">
+    <h2 class="text-3xl lg:text-4xl font-normal mb-8">Galleri</h2>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 galleri">
-        {
-          images.map(({ src }) => (
-            <div class="">
-              <img src={src} class="w-80 h-80 mb-4" alt="" loading="eager" />
-            </div>
-          ))
-        }
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 galleri">
+      {
+        images.map(({ src }) => (
+          <div class="">
+            <img src={src} class="w-80 h-80 mb-4" alt="" loading="eager" />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="om_forfatter" class="max-w-3xl mx-auto mt-32 om_forfatter">
+    <h2 class="text-3xl lg:text-4xl font-normal mb-8">Forfatteren</h2>
+    <article class="grid md:grid-cols-2 gap-5">
+      <div class="">
+        <Image src={forfatter} format="webp" alt="foto" class="" />
       </div>
-    </section>
+      <div class="">
+        <p>Sten Simons har en lang foto-karriere bag sig. Det hele startede i 00’erne, da han gik rundt i Pisserenden for at fotografere ungdommens forfald. Det ledte til en række udstillinger, og blev senere til hans først fotobog “Ungdomsdruk - pinlige billeder fra nattelivet.” Derefter tog karrieren fart: Han blev fotojournalist og dokumenterede en masse dagligdagsstof fra Amager på dagbladet “Amagerkaneren.” Sideløbende begyndte han at undervise i foto, og har skrevet et utal af bøger, herunder bestsellerne Scener fra S-toget, Brun mad - en visuel odysse, og lærebogen Fotografering for evnesvage.</p>
+      </div>
+    </article>
+  </section>
 
-    <section id="om_forfatter" class="max-w-3xl mx-auto mt-32 om_forfatter">
-      <h2 class="text-3xl lg:text-4xl font-normal mb-8">Forfatteren</h2>
-      <article class="grid md:grid-cols-2 gap-5">
-        <div class="">
-          <Image src={forfatter} format="webp" alt="foto" class="" />
-        </div>
-        <div class="">
-          <p>Sten Simons har en lang foto-karriere bag sig. Det hele startede i 00’erne, da han gik rundt i Pisserenden for at fotografere ungdommens forfald. Det ledte til en række udstillinger, og blev senere til hans først fotobog “Ungdomsdruk - pinlige billeder fra nattelivet.” Derefter tog karrieren fart: Han blev fotojournalist og dokumenterede en masse dagligdagsstof fra Amager på dagbladet “Amagerkaneren.” Sideløbende begyndte han at undervise i foto, og har skrevet et utal af bøger, herunder bestsellerne Scener fra S-toget, Brun mad - en visuel odysse, og lærebogen Fotografering for evnesvage.</p>
-        </div>
-      </article>
-    </section>
+  <section id="formular" class="max-w-xl mx-auto mt-32 formular">
+    <h2 class="text-3xl lg:text-4xl font-normal mb-8">Køb Københavnerbilleder nu!</h2>
+    <form method="post" class="text-neutral-950">
+      <div class="grid grid-cols-3 mb-12">
+        <label for="antal" class="col-span-1 block">Antal:</label>
+        <input type="number" id="antal" value="1" class="col-span-2 border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+      </div>
 
-    <section id="formular" class="max-w-xl mx-auto mt-32 formular">
-      <h2 class="text-3xl lg:text-4xl font-normal mb-8">Køb Københavnerbilleder nu!</h2>
-      <form method="post" class="text-gray-700">
-        <label for="antal" class="block">Antal:</label>
-        <input type="number" id="antal" value="1" class="mt-1 block rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" /><br />
-
+      <div class="mb-12">
         <label for="levering">Levering:</label>
-        <input type="radio" id="radio" class="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" />
+        <input type="radio" id="radio" class="" />
         <label for="postnord">Post Nord</label>
-        <input type="radio" id="radio" class="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" />
-        <label for="afhent">Afent selv</label>
+        <input type="radio" id="radio" class="" />
+        <label for="afhent">Afent selv</label><br />
+      </div>
 
-        <label for="name">Navn:</label>
-        <input type="text" id="name" placeholder="Anders And" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" /><br />
+      <input type="text" id="name" placeholder="Navn" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-ful mb-12" /><br />
 
-        <label for="adresse">Adresse:</label>
-        <input type="text" id="adresse" placeholder="Paradisæblevej 8" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" /><br />
+      <input type="text" id="adresse" placeholder="Andresse" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full mb-12" /><br />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="anders@andeby.dk" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" /><br />
+      <input type="email" id="email" placeholder="Email" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full mb-12" /><br />
 
-        <label for="postby">Postnummer og By:</label><br />
-        <input type="text" id="postnr" placeholder="0900" class="mt-1 w-min rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" />
-        <input type="text" id="by" placeholder="Andeby C" class="mt-1 w-min rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" /><br />
+      <div class="grid grid-cols-6 gap-8 mb-12">
+        <input type="text" id="postnr" placeholder="Postnummer" class="col-span-2 border-0 border-b-2 border-neutral-950 bg-neutral-50" />
+        <input type="text" id="by" placeholder="By" class="col-span-4 border-0 border-b-2 border-neutral-950 bg-neutral-50" /><br />
+      </div>
 
-        <label for="tlf">Telefon:</label>
-        <input type="tel" id="tlf" placeholder="555-555" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" /><br />
+      <input type="tel" id="tlf" placeholder="Telefon" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full mb-12" /><br />
 
-        <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" />
-        <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
+      <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="mb-12" />
+      <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
 
-        <div class="grid grid-cols-2 gap-2">
-          <Button variant="primary" size="large" type="submit">Til betaling</Button>
-          <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
-        </div>
-      </form>
-    </section>
+      <div class="grid grid-cols-2 gap-2 mb-12">
+        <Button variant="primary" size="large" type="submit">Til betaling</Button>
+        <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
+      </div>
+    </form>
+
+    <!-- <form method="post" class="text-neutral-950">
+      <label for="antal" class="block">Antal:</label>
+      <input type="number" id="antal" value="1" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+
+      <label for="levering">Levering:</label>
+      <input type="radio" id="radio" class="" />
+      <label for="postnord">Post Nord</label>
+      <input type="radio" id="radio" class="" />
+      <label for="afhent">Afent selv</label>
+
+      <label for="name">Navn:</label>
+      <input type="text" id="name" placeholder="Anders And" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+
+      <label for="adresse">Adresse:</label>
+      <input type="text" id="adresse" placeholder="Paradisæblevej 8" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="anders@andeby.dk" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+
+      <label for="postby">Postnummer og By:</label><br />
+      <input type="text" id="postnr" placeholder="0900" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" />
+      <input type="text" id="by" placeholder="Andeby C" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+
+      <label for="tlf">Telefon:</label>
+      <input type="tel" id="tlf" placeholder="555-555" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+
+      <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="" />
+      <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
+
+      <div class="grid grid-cols-2 gap-2">
+        <Button variant="primary" size="large" type="submit">Til betaling</Button>
+        <Button variant="secondary" size="large" type="submit">Download Prøvekapitel</Button>
+      </div>
+    </form> -->
   </section>
 
   <script>
