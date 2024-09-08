@@ -3,7 +3,7 @@
 const { stjerner = "", forfatter = "", anmeldelseid = "" } = Astro.props;
 ---
 
-<article class="prose mb-6">
+<article class="prose mb-6 text-neutral-950">
   <p class="stjerner" id={anmeldelseid}></p>
   <p><slot /></p>
   <p class="italic">{forfatter}</p>
