@@ -94,10 +94,10 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
     </article>
   </section>
 
-  <section id="anmeldelser" class="mt-20 md:mt-32 anmeldelser">
+  <section id="anmeldelser" class="lg:max-w-4xl mx-auto mt-20 md:mt-32 anmeldelser">
     <h2 class="text-3xl lg:text-4xl text-center font-normal mb-8">Anmeldelser af bogen</h2>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid lg:grid-cols-3 gap-6">
       <Anmeldelser stjerner="5" forfatter="- Hanne Hovgaard, Berlingeren" anmeldelsesid="a1">Københavnerbilleder er en grundig introduktion til at skyde billeder med retro-kant. Hvad enten du er har arbejdet med foto siden 135-filmen kom på markedet, du kun har skudt digitalt eller er helt nybegynder, er der masser af tips og tricks i bogen. </Anmeldelser>
       <Anmeldelser stjerner="4" forfatter="- Kim Kloggaard, Fotojournalen.dk" anmeldelsesid="a2">Teksten er underholdende, og billederne er sku’ flotte. Hvad mere skal man sige om en fotobog? </Anmeldelser>
       <Anmeldelser stjerner="6" forfatter="- Volmer Hansen, Lukkertiden.dk" anmeldelsesid="a3">Sten Simons kan det der - og han bliver bedre og bedre. Stens tredje fotobog er klart den bedste - her er han for alvor i sit rette element, meget bedre end “studiefotografering som begyndere.” Tillykke - godt arbejde. </Anmeldelser>
