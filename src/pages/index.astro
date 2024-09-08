@@ -210,33 +210,32 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
   <section id="formular" class="max-w-xl mx-auto mt-32 formular">
     <h2 class="text-3xl lg:text-4xl font-normal mb-8">Køb Københavnerbilleder nu!</h2>
     <form method="post" class="text-neutral-950">
-      <div class="grid grid-cols-3 mb-12">
-        <label for="antal" class="col-span-1 block">Antal:</label>
-        <input type="number" id="antal" value="1" class="col-span-2 border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full" /><br />
+      <div class="mb-12">
+        <label for="antal" class="block">Antal:</label>
+        <input type="number" id="antal" value="1" class="mt-0 block px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
       </div>
 
       <div class="mb-12">
         <label for="levering">Levering:</label>
-        <input type="radio" id="radio" class="" />
+        <input type="radio" id="radio" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950" />
         <label for="postnord">Post Nord</label>
-        <input type="radio" id="radio" class="" />
+        <input type="radio" id="radio" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950" />
         <label for="afhent">Afent selv</label><br />
       </div>
 
-      <input type="text" id="name" placeholder="Navn" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-ful mb-12" /><br />
+      <input type="text" id="name" placeholder="Navn" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
+      <input type=" text" id="adresse" placeholder="Adresse" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
 
-      <input type="text" id="adresse" placeholder="Andresse" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full mb-12" /><br />
-
-      <input type="email" id="email" placeholder="Email" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full mb-12" /><br />
+      <input type="email" id="email" placeholder="Email" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
 
       <div class="grid grid-cols-6 gap-8 mb-12">
-        <input type="text" id="postnr" placeholder="Postnummer" class="col-span-2 border-0 border-b-2 border-neutral-950 bg-neutral-50" />
-        <input type="text" id="by" placeholder="By" class="col-span-4 border-0 border-b-2 border-neutral-950 bg-neutral-50" /><br />
+        <input type="text" id="postnr" placeholder="Postnummer" class="col-span-2 mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" />
+        <input type="text" id="by" placeholder="By" class="col-span-4 mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
       </div>
 
-      <input type="tel" id="tlf" placeholder="Telefon" class="border-0 border-b-2 border-neutral-950 bg-neutral-50 w-full mb-12" /><br />
+      <input type="tel" id="tlf" placeholder="Telefon" class="mt-0 block w-full px-0.5 border-0 border-b-2 border-neutral-300 focus:ring-0 focus:border-neutral-950 bg-neutral-50" /><br />
 
-      <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="mb-12" />
+      <input type="checkbox" id="nyhedsbrev" placeholder="Ja tak til nyhedsbrev" class="border-neutral-300 border-2 text-neutral-950 focus:border-neutral-300 focus:ring-neutral-950 mb-12" />
       <label for="nyhedsbrev">Ja tak til nyhedsbrev</label><br />
 
       <div class="grid grid-cols-2 gap-2 mb-12">
