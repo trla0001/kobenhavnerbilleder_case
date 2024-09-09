@@ -111,7 +111,7 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then((files) => 
       {
         images.map(({ src }) => (
           <div class="">
-            <img src={src} class="w-80 h-80 mb-4" alt="" loading="lazy" />
+            <img src={src} class="h-full object-cover mb-4" alt="" loading="lazy" />
           </div>
         ))
       }
